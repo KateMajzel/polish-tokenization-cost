@@ -1,0 +1,5 @@
+# Versions used for the run recorded in results.json.
+transformers==5.16.1
+tokenizers==0.23.1
+sentencepiece==0.2.2
+huggingface_hub==1.26.1
