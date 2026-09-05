@@ -1,0 +1,63 @@
+# Nemotron Nano 9B v2 NIM on GKE (single L4). See docs/nim-on-gke.md for context
+# and for why this deployment did not reach a serving state.
+#
+# The image tag below is the major-version tag from the NGC catalogue. Check the
+# Tags page before reusing it; `latest` drifts and should not be pinned to.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nemotron-nim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nemotron-nim
+  template:
+    metadata:
+      labels:
+        app: nemotron-nim
+    spec:
+      imagePullSecrets:
+      - name: ngc-secret
+      containers:
+      - name: nim
+        image: nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2:1
+        env:
+        - name: NGC_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: ngc-api
+              key: NGC_API_KEY
+        # The default context (131,072) fails to initialise on a 24 GB L4 at bf16.
+        - name: NIM_MAX_MODEL_LEN
+          value: "8192"
+        - name: NIM_LOW_MEMORY_MODE
+          value: "1"
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - name: cache
+          mountPath: /opt/nim/.cache
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: cache
+        emptyDir: {}
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nemotron-nim
+spec:
+  selector:
+    app: nemotron-nim
+  ports:
+  - port: 8000
+    targetPort: 8000
