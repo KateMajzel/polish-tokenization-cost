@@ -6,7 +6,6 @@ On 9 MB of Polish text, general-purpose tokenizers need between **24% (Gemma 2) 
 
 ![Bytes per token for Polish text, eight tokenizers](density.png)
 
-**Disclosure.** GoLLeM-PL is the author's own tokenizer ([tokenizer-pl-32k]...
 
 **Disclosure.** GoLLeM-PL is the author's own tokenizer ([tokenizer-pl-32k](https://huggingface.co/KateMajzel/tokenizer-pl-32k)). The table therefore includes a second Polish tokenizer built independently by another team, as a check on whether the effect is specialisation or an artefact of one corpus. This is not a leaderboard: the tokenizers here were built for different languages and different scopes, and the question is what language fit costs, not whose work is better. Everything needed to verify the comparison is in this repository.
 
