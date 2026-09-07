@@ -4,6 +4,10 @@
 
 On 9 MB of Polish text, general-purpose tokenizers need between **24% (Gemma 2) and 72% (Mistral 7B)** more tokens than GoLLeM-PL, a 32k tokenizer trained on Polish. Tokens are what a context window holds, what inference throughput is measured in, and what API providers bill for — so a tokenizer that cuts a language finely makes that language more expensive on every one of those axes.
 
+![Bytes per token for Polish text, eight tokenizers](density.png)
+
+**Disclosure.** GoLLeM-PL is the author's own tokenizer ([tokenizer-pl-32k]...
+
 **Disclosure.** GoLLeM-PL is the author's own tokenizer ([tokenizer-pl-32k](https://huggingface.co/KateMajzel/tokenizer-pl-32k)). The table therefore includes a second Polish tokenizer built independently by another team, as a check on whether the effect is specialisation or an artefact of one corpus. This is not a leaderboard: the tokenizers here were built for different languages and different scopes, and the question is what language fit costs, not whose work is better. Everything needed to verify the comparison is in this repository.
 
 ---
@@ -127,10 +131,15 @@ Merge rules are compared as sets rather than as ordered lists. Different version
 
 | Path | Contents |
 |---|---|
+| Path | Contents |
+|---|---|
 | `polish_token_tax.py` | Measurement script |
 | `results.json` | Raw output from the run reported above, every repository listed separately |
-| `tokenizer_groups.json` | Vocabulary and merge-rule comparison for repositories with identical counts |
 | `verify_tokenizers.py` | Repository identity check and shared-ID evidence; regenerates `tokenizer_groups.json` |
+| `tokenizer_groups.json` | Vocabulary and merge-rule comparison for repositories with identical counts |
+| `shared_id_evidence.json` | How many tokens each collapsed group shares, and how many carry the same ID everywhere |
+| `make_chart.py` | Regenerates `density.png` from `results.json` |
+| `density.png` | Bytes-per-token chart shown at the top of this README |
 | `requirements.txt` | Pinned Python dependencies |
 | `k8s/nim-nemotron.yaml` | GKE deployment manifest for a Nemotron NIM |
 | `docs/nim-on-gke.md` | Notes from deploying Nemotron NIM on Google Kubernetes Engine — a separate exercise from the tokenizer measurement, and on a different model from the one in the table |
