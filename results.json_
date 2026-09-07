@@ -1,0 +1,133 @@
+{
+  "measured_on": "2026-09-07",
+  "transformers_version": "5.16.1",
+  "input_file": "heldout.txt",
+  "input_sha256": "f6df196e74b4de596d1f5815adaa4eb567a7aac64b84f1300e02c78345780f54",
+  "n_bytes": 8981681,
+  "n_words": 1249859,
+  "n_docs": null,
+  "price_per_million_usd": 0.5,
+  "results": [
+    {
+      "label": "GoLLeM-PL (Polish, 32k)",
+      "repo": "KateMajzel/tokenizer-pl-32k",
+      "revision": "a153cff7e9f542146aa94baa14ef72965975fec2",
+      "vocab_size": 32768,
+      "n_tokens": 2117649,
+      "bytes_per_token": 4.241345473211094,
+      "tokens_per_word": 1.6943103182038934,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Bielik-PL v3 / APT4 (Polish)",
+      "repo": "speakleash/Bielik-PL-11B-v3.0-Instruct",
+      "revision": "a74fa8560324b6b1502d01bf6440e2b0affcfa4f",
+      "vocab_size": 32000,
+      "n_tokens": 2297003,
+      "bytes_per_token": 3.910173822149993,
+      "tokens_per_word": 1.8378097049347166,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "PLLuM 12B (Polish)",
+      "repo": "CYFRAGOVPL/PLLuM-12B-base-2412",
+      "revision": "9bca997ec8cdd7bfb87c668dcd52199a091f66e3",
+      "vocab_size": 131072,
+      "n_tokens": 2880858,
+      "bytes_per_token": 3.1177104182156845,
+      "tokens_per_word": 2.3049463979536893,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Bielik 11B v3 (Mistral 32k)",
+      "repo": "speakleash/Bielik-11B-v3.0-Instruct",
+      "revision": "735bfee1125fe8b497ac2769de94822a11f77167",
+      "vocab_size": 32128,
+      "n_tokens": 3636086,
+      "bytes_per_token": 2.470150871019002,
+      "tokens_per_word": 2.9091969574167966,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Gemma 2",
+      "repo": "google/gemma-2-2b",
+      "revision": "c5ebcd40d208330abc697524c919956e692655cf",
+      "vocab_size": 256000,
+      "n_tokens": 2633816,
+      "bytes_per_token": 3.410139888283768,
+      "tokens_per_word": 2.107290502368667,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Nemotron 3 Nano 30B",
+      "repo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "revision": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+      "vocab_size": 131072,
+      "n_tokens": 2880858,
+      "bytes_per_token": 3.1177104182156845,
+      "tokens_per_word": 2.3049463979536893,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Qwen 2.5",
+      "repo": "Qwen/Qwen2.5-7B",
+      "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+      "vocab_size": 151665,
+      "n_tokens": 3103076,
+      "bytes_per_token": 2.894444415799033,
+      "tokens_per_word": 2.4827408531682376,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Mistral Nemo / Tekken (131k)",
+      "repo": "mistralai/Mistral-Nemo-Base-2407",
+      "revision": "a4477a2f977929a969745b69bbd62e03043551a5",
+      "vocab_size": 131072,
+      "n_tokens": 2880858,
+      "bytes_per_token": 3.1177104182156845,
+      "tokens_per_word": 2.3049463979536893,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Mistral 7B v0.1 (32k)",
+      "repo": "mistralai/Mistral-7B-v0.1",
+      "revision": "27d67f1b5f57dc0953326b2601d68371d40ea8da",
+      "vocab_size": 32000,
+      "n_tokens": 3636086,
+      "bytes_per_token": 2.470150871019002,
+      "tokens_per_word": 2.9091969574167966,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "Llama 3",
+      "repo": "meta-llama/Meta-Llama-3-8B",
+      "revision": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+      "vocab_size": 128256,
+      "n_tokens": 3183356,
+      "bytes_per_token": 2.821450381295714,
+      "tokens_per_word": 2.5469720984527053,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    },
+    {
+      "label": "GPT-2",
+      "repo": "gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "vocab_size": 50257,
+      "n_tokens": 4355238,
+      "bytes_per_token": 2.0622709941454405,
+      "tokens_per_word": 3.4845834610144024,
+      "roundtrip_ok": true,
+      "per_doc": {}
+    }
+  ]
+}

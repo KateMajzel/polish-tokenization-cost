@@ -1,0 +1,21 @@
+{
+  "tekken": {
+    "repos": [
+      "mistralai/Mistral-Nemo-Base-2407",
+      "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "CYFRAGOVPL/PLLuM-12B-base-2412"
+    ],
+    "tokens_in_all": 131064,
+    "tokens_in_all_same_id": 131064,
+    "all_shared_ids_identical": true
+  },
+  "mistral-32k": {
+    "repos": [
+      "mistralai/Mistral-7B-v0.1",
+      "speakleash/Bielik-11B-v3.0-Instruct"
+    ],
+    "tokens_in_all": 32000,
+    "tokens_in_all_same_id": 32000,
+    "all_shared_ids_identical": true
+  }
+}

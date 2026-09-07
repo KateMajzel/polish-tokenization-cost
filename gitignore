@@ -1,0 +1,10 @@
+# The held-out slice is not redistributed — see README, "The held-out set is private"
+heldout.txt
+heldout.jsonl
+*.jsonl
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store

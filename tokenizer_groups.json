@@ -1,0 +1,82 @@
+{
+  "tekken": {
+    "reference": "mistralai/Mistral-Nemo-Base-2407",
+    "note": "merges compared as sets: serialisation order differs between tokenizers library versions",
+    "repos": {
+      "mistralai/Mistral-Nemo-Base-2407": {
+        "vocab_size": 131072,
+        "merge_count": 269443,
+        "same_tokens": true,
+        "same_ids": true,
+        "same_merges_as_set": true,
+        "same_merges_as_list": true,
+        "tokens_only_here": [],
+        "tokens_missing_here": []
+      },
+      "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
+        "vocab_size": 131072,
+        "merge_count": 269443,
+        "same_tokens": false,
+        "same_ids": false,
+        "same_merges_as_set": true,
+        "same_merges_as_list": true,
+        "tokens_only_here": [
+          "</think>",
+          "</tool_call>",
+          "</tool_response>",
+          "<think>",
+          "<tool_call>",
+          "<tool_response>",
+          "<|im_end|>",
+          "<|im_start|>"
+        ],
+        "tokens_missing_here": [
+          "<SPECIAL_14>",
+          "<SPECIAL_15>",
+          "<SPECIAL_16>",
+          "<SPECIAL_17>",
+          "<pad>",
+          "[MIDDLE]",
+          "[PREFIX]",
+          "[SUFFIX]"
+        ]
+      },
+      "CYFRAGOVPL/PLLuM-12B-base-2412": {
+        "vocab_size": 131072,
+        "merge_count": 269443,
+        "same_tokens": true,
+        "same_ids": true,
+        "same_merges_as_set": true,
+        "same_merges_as_list": true,
+        "tokens_only_here": [],
+        "tokens_missing_here": []
+      }
+    }
+  },
+  "mistral-32k": {
+    "reference": "mistralai/Mistral-7B-v0.1",
+    "note": "merges compared as sets: serialisation order differs between tokenizers library versions",
+    "repos": {
+      "mistralai/Mistral-7B-v0.1": {
+        "vocab_size": 32000,
+        "merge_count": 58980,
+        "same_tokens": true,
+        "same_ids": true,
+        "same_merges_as_set": true,
+        "same_merges_as_list": true,
+        "tokens_only_here": [],
+        "tokens_missing_here": []
+      },
+      "speakleash/Bielik-11B-v3.0-Instruct": {
+        "vocab_size": 32000,
+        "merge_count": 58980,
+        "same_tokens": true,
+        "same_ids": true,
+        "same_merges_as_set": true,
+        "same_merges_as_list": false,
+        "tokens_only_here": [],
+        "tokens_missing_here": []
+      }
+    }
+  }
+}

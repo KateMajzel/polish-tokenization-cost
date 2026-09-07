@@ -1,5 +1,14 @@
-# Versions used for the run recorded in results.json.
+# Measurement
 transformers==5.16.1
 tokenizers==0.23.1
-sentencepiece==0.2.2
 huggingface_hub==1.26.1
+
+# Some tokenizers (Gemma, Llama) ship SentencePiece models
+sentencepiece>=0.2.0
+protobuf>=4.25
+
+# make_chart.py
+matplotlib>=3.8
+
+# bench_nim.py
+requests>=2.31
