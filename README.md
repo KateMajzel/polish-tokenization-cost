@@ -2,9 +2,7 @@
 
 **How much extra does Polish text cost in open models — and what does a language-specific tokenizer buy you?**
 
-On 9 MB of Polish text, general-purpose tokenizers need between **24% (Gemma 2) and 72% (Mistral 7B)** more tokens than GoLLeM-PL, a 32k tokenizer trained on Polish. Tokens are what a context window holds, what inference throughput is measured in, and what API providers bill for — so a tokenizer that cuts a language finely makes that language more expensive on every one of those axes.
-
-![Bytes per token for Polish text, eight tokenizers](density.png)
+On 9 MB of Polish text, general-purpose tokenizers need between **24% (Gemma 2) the best of the general ones and 72% (Mistral 7B)** more tokens than GoLLeM-PL, a 32k tokenizer trained on Polish. Tokens are what a context window holds, what inference throughput is measured in, and what API providers bill for — so a tokenizer that cuts a language finely makes that language more expensive on every one of those axes.
 
 
 **Disclosure.** GoLLeM-PL is the author's own tokenizer ([tokenizer-pl-32k](https://huggingface.co/KateMajzel/tokenizer-pl-32k)). The table therefore includes a second Polish tokenizer built independently by another team, as a check on whether the effect is specialisation or an artefact of one corpus. This is not a leaderboard: the tokenizers here were built for different languages and different scopes, and the question is what language fit costs, not whose work is better. Everything needed to verify the comparison is in this repository.
@@ -41,8 +39,6 @@ Raw output, including every tokenizer's Hub commit hash, the input hash and the 
 **The gap is language fit, not vocabulary size.** Mistral 7B and GoLLeM-PL have essentially the same vocabulary size — 32,000 against 32,768 — and differ by 72%. Gemma 2's vocabulary is 7.8× larger and still needs 24% more tokens. What a vocabulary was trained on matters more than how large it is.
 
 **Two independent Polish tokenizers agree.** Bielik-PL's tokenizer was built by a different team, on a different pipeline, with different vocabulary construction — and it lands in the same region: more than 14% denser on Polish than any general-purpose tokenizer measured. The 8% between the two of them is noise next to that. Two efforts converging from different directions is the actual result here; neither is a ranking of the other, and the two were built for different scopes.
-
-**One tokenizer can serve many models.** Three of the repositories measured, from three different organisations, share a single vocabulary and merge table down to eight control tokens. This is the ecosystem's default, not anyone's oversight: a tokenizer comes with whatever a model was built on unless someone deliberately replaces it, and replacing it means retraining from scratch. That is precisely why the cost is easy to miss — nobody chose it, it was inherited. A model's name says little about how it segments a given language.
 
 **Nothing here is lossy.** All eight tokenizers reconstruct the text exactly, so none of the overhead comes from dropping or normalising Polish diacritics. The difference is purely how finely each one cuts.
 
@@ -138,7 +134,6 @@ Merge rules are compared as sets rather than as ordered lists. Different version
 | `tokenizer_groups.json` | Vocabulary and merge-rule comparison for repositories with identical counts |
 | `shared_id_evidence.json` | How many tokens each collapsed group shares, and how many carry the same ID everywhere |
 | `make_chart.py` | Regenerates `density.png` from `results.json` |
-| `density.png` | Bytes-per-token chart shown at the top of this README |
 | `requirements.txt` | Pinned Python dependencies |
 | `k8s/nim-nemotron.yaml` | GKE deployment manifest for a Nemotron NIM |
 | `docs/nim-on-gke.md` | Notes from deploying Nemotron NIM on Google Kubernetes Engine — a separate exercise from the tokenizer measurement, and on a different model from the one in the table |
